@@ -46,8 +46,7 @@ jobs:
         shell: bash
         run: |
           cd tauri
-          bun run tauri build --no-bundle
-          bun run tauri build --bundles nsis
+          bun run tauri build --bundles nsis -c '{"bundle":{"createUpdaterArtifacts":false}}'
 
       - name: Upload Standalone voicebox.exe
         uses: actions/upload-artifact@v4
